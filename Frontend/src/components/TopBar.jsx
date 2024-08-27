@@ -1,14 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import SearchBar from './SearchBar';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logoutUser } from '../utils/loginStatus';
-import { useNavigate } from 'react-router-dom';
+import SearchBar from './SearchBar';
+import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 
-const TopBar = () => {
+const TopBar = ({ toggleTheme }) => {
   const { t } = useTranslation();
   const { isLoggedIn, userId, name, avatar } = useSelector((state) => state.userState);
   const [inElectron, setInElectron] = useState(false);
@@ -30,7 +28,7 @@ const TopBar = () => {
   const fetchSearchResults = async (query) => {
     try {
       const response = await axios.get(import.meta.env.VITE_SERVER_URL + `/api/search?q=${query}`);
-      return response.data; // Assuming the response data is the array of results
+      return response.data;
     } catch (error) {
       console.error('Failed to fetch search results', error);
       return [];
@@ -56,6 +54,7 @@ const TopBar = () => {
       </div>
 
       <div className='h-16 ml-auto flex items-center justify-center' style={{ WebkitAppRegion: 'no-drag' }}>
+
         {!isLoggedIn ? (
           <Link to='/users/login' className='flex items-center p-0.5 rounded-2xl border mr-8'>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-8">
@@ -106,7 +105,6 @@ const TopBar = () => {
           </button>
         </div>
       }
-
     </div>
   );
 };

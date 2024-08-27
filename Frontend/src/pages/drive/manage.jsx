@@ -42,8 +42,8 @@ export default function Manage() {
         {t("driveManagement")}
       </h1>
       <div className="m-4">
-        <Link to="/drive/new" className="m-2 ml-6 bg-orange-300 px-1.5 py-1.5 rounded-lg hover:bg-orange-400">上传</Link>
-        <Link to="/drive" className="m-2 bg-orange-300 px-1.5 py-1.5 rounded-lg hover:bg-orange-400">完成</Link>
+        <Link to="/drive/new" className="m-2 ml-6 bg-orange-300 px-1.5 py-1.5 rounded-lg hover:bg-orange-400">Upload</Link>
+        <Link to="/drive" className="m-2 bg-orange-300 px-1.5 py-1.5 rounded-lg hover:bg-orange-400">Finish</Link>
       </div>
       <table className="w-full ml-10">
         <tbody>

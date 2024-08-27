@@ -4,29 +4,32 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 
-let socket
+let socket;
 
 export default function ChatUI({ userId, receiverId, senderAvatar, receiverAvatar }) {
   const { t } = useTranslation();
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
 
+  // Initialize socket connection
   useEffect(() => {
     socket = io(import.meta.env.VITE_SERVER_URL, {
       query: { userId }
     });
 
+    // Listen for incoming messages
     socket.on('newMessage', (msg) => {
       setMessages((prevMessages) => [...prevMessages, msg]);
     });
 
+    // Clean up on component unmount
     return () => {
       socket.off('newMessage');
       socket.disconnect();
     };
-  }, []);
+  }, [userId]);
 
-  // Fetch history messages
+  // Fetch previous messages between users
   useEffect(() => {
     if (!userId || !receiverId) return;
     const fetchMessages = async () => {
@@ -41,6 +44,7 @@ export default function ChatUI({ userId, receiverId, senderAvatar, receiverAvata
     fetchMessages();
   }, [userId, receiverId]);
 
+  // Handle sending messages
   const sendMessage = (event) => {
     event.preventDefault();
     if (message) {

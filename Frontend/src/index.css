@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Base Styles (Light Mode by default) */
+body.light-mode {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+  }
+  
+  /* Sidebar example */
+  .light-mode .sidebar {
+    background-color: #f4f4f4;
+  }
+  
+  .dark-mode .sidebar {
+    background-color: #1f1f1f;
+  }
+  
+  /* TopBar example */
+  .light-mode .top-bar {
+    background-color: #ffffff;
+  }
+  
+  .dark-mode .top-bar {
+    background-color: #333333;
+  }
+  
+  /* Add more components as needed */
+  

@@ -1,8 +1,7 @@
-# ZeroMusic - Online Music Application
+# SoundSphere - Online Music Application
 
-English | [简体中文](README.zh-CN.md)
 
-A full-stack online music app, developed using MERN stack (React, Express.js, MongoDB) and Electron. Libraries including Tailwind CSS, Redux, Socket.IO are adopted.
+A full-stack online music website, developed using MERN stack (React, Express.js, MongoDB). Libraries including Tailwind CSS, Redux, Socket.IO are adopted.
 
 <p align="center">
     <img src="https://github.com/HaowenHou/zero-music-mern/blob/main/.github/assets/en/home.png?raw=true" width="90%">

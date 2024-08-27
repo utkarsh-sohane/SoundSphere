@@ -7,7 +7,6 @@ import { useTranslation } from 'react-i18next';
 
 export default function Chat() {
   const { t } = useTranslation();
-  // creates a new conversation with the user with the given id
   const [searchParams] = useSearchParams();
   const additionalUserId = searchParams.get('uid');
 
@@ -26,12 +25,10 @@ export default function Chat() {
         const res = await axios.get(import.meta.env.VITE_SERVER_URL + `/api/messages`);
         const chatList = res.data.data;
 
-        // If there is an additional user id in the URL, and the user is not already in the chat list,
-        // fetch the name and avatar, and set it as the active tab
+        // If an additional user ID is provided via URL, add it to the chat list if not present
         if (additionalUserId) {
           if (!chatList.find(chat => chat.partnerId === additionalUserId)) {
             const additionalUser = await axios.get(import.meta.env.VITE_SERVER_URL + `/api/users/${additionalUserId}`);
-            // Add this user info to the response chat list
             chatList.push({
               partnerId: additionalUserId,
               partnerName: additionalUser.data.name,
@@ -52,6 +49,7 @@ export default function Chat() {
     fetchChatList();
   }, [userId]);
 
+  // Handle chat selection
   const handleChatClick = (receiverId) => {
     setActiveTab(receiverId);
     setReceiverAvatar(chatList.find(chat => chat.partnerId === receiverId).partnerAvatar);
@@ -88,7 +86,6 @@ export default function Chat() {
           />
         }
       </div>
-
     </div>
   );
 }

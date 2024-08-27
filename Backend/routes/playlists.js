@@ -7,7 +7,6 @@ import Playlist from '../models/Playlist.js';
 import User from '../models/User.js';
 import { storeFile, handleFormidable } from '../utils/file.js';
 import { addFavoriteStatus } from '../utils/tracks.js';
-
 const router = express.Router();
 
 // GET playlist by ID or global playlist
