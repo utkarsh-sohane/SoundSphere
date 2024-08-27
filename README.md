@@ -1,4 +1,4 @@
-# SoundSphere - Online Music Application
+# SoundSphere - Online Music Website
 
 
 A full-stack online music website, developed using MERN stack (React, Express.js, MongoDB). Libraries including Tailwind CSS, Redux, Socket.IO are adopted.
