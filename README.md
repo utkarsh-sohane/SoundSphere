@@ -3,23 +3,17 @@
 
 A full-stack online music website, developed using MERN stack (React, Express.js, MongoDB). Libraries including Tailwind CSS, Redux, Socket.IO are adopted.
 
-<p align="center">
-    <img src="https://github.com/HaowenHou/zero-music-mern/blob/main/.github/assets/en/home.png?raw=true" width="90%">
-</p>
+
 
 ## Features
 
 - :star: Favoriting music & Adding music to playlists (from context menu)
 
-<p align="center">
-    <img src="https://github.com/HaowenHou/zero-music-mern/blob/main/.github/assets/en/add-to-playlist.png?raw=true" width="40%">
-</p>
+
 
 - :speech_balloon: Sharing comments & Viewing others' comments of a track
 
-<p align="center">
-    <img src="https://github.com/HaowenHou/zero-music-mern/blob/main/.github/assets/en/comments.png?raw=true" height="auto" width="80%">
-</p>
+
 
 - :clipboard: Creating and managing playlists & Favoriting others' playlists
 
@@ -27,22 +21,14 @@ A full-stack online music website, developed using MERN stack (React, Express.js
 
 - :speaker: Posting thoughts with music & Viewing friends' posts
 
-<p align="center">
-    <img src="https://github.com/HaowenHou/zero-music-mern/blob/main/.github/assets/en/posting.png?raw=true" width="35%">
-    <img src="https://github.com/HaowenHou/zero-music-mern/blob/main/.github/assets/en/posts.png?raw=true" width="60%">
-</p>
+
 
 - :blush: Personal profile page, showing one's favorites, playlists and posts
 
-<p align="center">
-    <img src="https://github.com/HaowenHou/zero-music-mern/blob/main/.github/assets/en/profile.png?raw=true" height="auto" width="80%">
-</p>
 
 - :envelope: Personal messaging (Socket.IO)
 
-<p align="center">
-    <img src="https://github.com/HaowenHou/zero-music-mern/blob/main/.github/assets/en/personal-message.png?raw=true" height="auto" width="80%">
-</p>
+
 
 - :lock: User authentication with JWT
 
